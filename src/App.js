@@ -15,7 +15,7 @@ class App extends Component {
     }
     startTimer () {
       clearInterval(this.timer)
-      this.timer = setInterval(this.tick.bind(this), 1000)
+      this.timer = setInterval(this.tick.bind(this), 100)
     }
     stopTimer () {
       clearInterval(this.timer)
