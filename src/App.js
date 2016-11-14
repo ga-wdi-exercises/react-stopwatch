@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+    constructor (props) {
+      super(props)
+      this.state = {count: 1}
+    }
+    componentWillUnmount () {
+      clearInterval(this.timer)
+    }
+    tick () {
+      this.setState({count: (this.state.count + 1)})
+    }
+    startTimer () {
+      clearInterval(this.timer)
+      this.timer = setInterval(this.tick.bind(this), 100)
+    }
+    stopTimer () {
+      clearInterval(this.timer)
+    }
+    render () {
+      return (
+        <div className='controls'>
+          <h1>{this.state.count}</h1>
+          <div>
+            <button onClick={this.startTimer.bind(this)}>Start</button>
+            <button onClick={this.stopTimer.bind(this)}>Stop</button>
+          </div>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+
     );
   }
 }
