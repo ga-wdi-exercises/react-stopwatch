@@ -5,9 +5,14 @@
   text-align: center;
 }
 
+h2 {
+  font-family: Josefin Slab;
+  font-size:40px;
+  text-align: center;
+}
 h1 {
   font-family: Josefin Slab;
-  font-size: 72px;
+  font-size: 100px;
   text-align: center;
 }
 
@@ -27,4 +32,3 @@ button {
 button:hover{
     background: #356094;
 }
-0
