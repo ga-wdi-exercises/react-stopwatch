@@ -1,21 +1,72 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+  constructor(props) {
+    super(props)
+    this.state = {
+      seconds: 0,
+      paused: true,
+    }
+    this.timerId = null
   }
+
+
+  handleStart(e) {
+    if(!this.timerId) {
+      this.timerId = setInterval( _ => this.updateTime(), 1000)
+    }
+  }
+
+  handlePause(e) {
+    let paused = !this.state.paused
+    if(paused){
+      this.resetInterval()
+      this.setState({
+        paused,
+      })
+    } else {
+      this.handleStart()
+    }
+  }
+
+  resetInterval() {
+    clearInterval(this.timerId)
+    this.timerId = null
+  }
+
+  handleReset(e){
+    clearInterval(this.timerId)
+    this.timerId = null
+  }
+
+  handleReset(e){
+    this.resetInterval()
+    this.setState({
+      seconds: 0,
+      paused: true
+    })
+  }
+
+  updateTime(){
+    this.setState({
+      seconds: this.state.seconds + 1,
+      paused: false,
+    })
+  }
+
+render() {
+  return (
+    <div className="stopwatch">
+      <h1>{this.state.seconds}</h1>
+      <div className="controls">
+        <button onClick={ e => this.handleStart(e) }>Start</button>
+        <button onClick={ e => this.handlePause(e) }>Pause</button>
+        <button onClick={ e => this.handleReset(e) }>Reset</button>
+      </div>
+    </div>
+  )
+}
 }
 
 export default App;
