@@ -1,4 +1,8 @@
-.App {
+body{
+  font-family: helvetica;
+}
+
+.stopwatch {
   text-align: center;
 }
 
