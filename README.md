@@ -10,4 +10,4 @@ Recreate a shopping cart page in React. Your final product should function simil
 
 ## Instructions
 
-Take the existing markup rendered from the `ShoppingCart` component in `src/index.js` and change into a fully functioning component. This means that you only have to add functionality -- not markup or styling -- to the existing code!
+Take the existing markup rendered from the `App` component in `src/App.js` and change into a fully functioning component. This means that you only have to add functionality -- not markup or styling -- to the existing code!
