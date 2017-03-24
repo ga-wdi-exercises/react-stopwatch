@@ -1,6 +1,6 @@
 # React Shopping Cart
 
-Recreate a shopping cart page in React. Your final product should function similarly to [this deployed version](http://oceanic-sense.surge.sh/) of the component.
+Recreate a shopping cart page in React. Your final product should function similarly to [this deployed version](http://scary-religion.surge.sh/) of the component.
 
 ## Getting Started
 
