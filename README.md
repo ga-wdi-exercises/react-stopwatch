@@ -1,4 +1,4 @@
-# React Shopping Cart
+# React Stopwatch
 
 Recreate a stopwatch in React. Your final product should function similarly to [this deployed version](http://scary-religion.surge.sh/) of the component.
 
