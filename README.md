@@ -10,4 +10,4 @@ Recreate a stopwatch in React. Your final product should function similarly to [
 
 ## Instructions
 
-Take the existing markup rendered from the `App` component in `src/App.js` and change into a fully functioning component. This means that you only have to add functionality -- not markup or styling -- to the existing code!
+Take the existing markup rendered from the `Stopwatch` component in `src/Stopwatch.js` and change into a fully functioning component. This means that you only have to add functionality -- not markup or styling -- to the existing code!
