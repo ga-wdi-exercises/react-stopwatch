@@ -8,7 +8,8 @@ class Stopwatch extends Component {
 
     this.state = {
       time: 0,
-      paused: false
+      paused: true,
+      timerId: null
     }
 
 
@@ -19,11 +20,21 @@ class Stopwatch extends Component {
 
 
   handleClickStart(){
-    if(!this.state.paused){
-      var x = setInterval(()=>{
-        this.setState({time: this.state.time + 1})
-      },1000)
-    }
+    console.log("handle");
+    this.setState({paused: false}, ()=>{
+
+
+
+
+        var x = setInterval(()=>{
+
+          if (!this.state.paused) {
+            this.setState({time: this.state.time + 1})
+          }
+        },1000)
+
+
+    })
   }
 
   handleClickReset(){
@@ -31,13 +42,9 @@ class Stopwatch extends Component {
   }
 
   handleClickPaused(){
-    if(this.state.paused)
-    {
-      this.setState({paused: false})
-    }
-    else {
-      this.setState({paused: true})
-    }
+
+      this.setState({paused: !this.state.paused})
+
   }
 
 
@@ -50,7 +57,7 @@ class Stopwatch extends Component {
         <div className="controls">
           <button onClick={this.handleClickReset}>Reset</button>
           <button onClick={this.handleClickStart}>Start</button>
-          <button onClick={this.handleClickPause}>Pause</button>
+          <button onClick={this.handleClickPaused}>Pause</button>
         </div>
       </div>
     );
