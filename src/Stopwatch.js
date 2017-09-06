@@ -16,9 +16,10 @@ class Stopwatch extends Component {
 
   timerPause(e) {
     e.preventDefault()
-    this.setState({seconds: 0})
     clearInterval(this.timer)
   }
+
+  
 
 
   render() {
@@ -28,7 +29,7 @@ class Stopwatch extends Component {
         <div className="controls">
           <button>Reset</button>
           <button onClick = {e => this.timerStart(e)}>Start</button>
-          <button>Pause</button>
+          <button onClick = {e => this.timerPause(e)}>Pause</button>
         </div>
       </div>
     );
