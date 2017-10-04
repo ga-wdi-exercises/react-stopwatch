@@ -13,7 +13,7 @@ class Stopwatch extends Component {
   handleStart(e){
     this.incrementer = setInterval(()=>
       this.setState({
-        seconds: this.state.seconds + 1, 
+        seconds: this.state.seconds + 1,
         paused: false
       })
       ,1000)
@@ -23,7 +23,7 @@ class Stopwatch extends Component {
     if (paused){
       clearInterval(this.incrementer)
       this.setState({
-        paused,
+        paused
       })
     }
     else{
